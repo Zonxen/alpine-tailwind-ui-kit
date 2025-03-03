@@ -1,5 +1,8 @@
 ![Tailpine](https://github.com/user-attachments/assets/70d89850-0022-4f4a-82da-a1b129803497)
-
+<meta property="og:image" content="https://raw.githubusercontent.com/Zonxen/alpine-tailwind-ui-kit/main/.github/thumbnail.png">
+<meta property="og:title" content="Alpine Tailwind UI Kit">
+<meta property="og:description" content="Komponen UI siap pakai dengan Tailwind CSS & Alpine.js.">
+<meta property="og:url" content="https://github.com/Zonxen/alpine-tailwind-ui-kit">
 # Alpine Tailwind UI Kit 🚀
 🔥 Koleksi komponen UI siap pakai untuk Laravel, Tailwind CSS, dan Alpine.js!
 
