@@ -1,3 +1,5 @@
+![Tailpine](https://github.com/user-attachments/assets/70d89850-0022-4f4a-82da-a1b129803497)
+
 # Alpine Tailwind UI Kit 🚀
 🔥 Koleksi komponen UI siap pakai untuk Laravel, Tailwind CSS, dan Alpine.js!
 
