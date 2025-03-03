@@ -3,7 +3,7 @@
         <input id="searchInput" type="text" class="w-full mt-5 p-2 border rounded-md" placeholder="Search...">
 
         <div class="max-w-7xl mx-auto mt-12">
-            <h2 class="font-semibold text-2xl">Pertanyaan Seputar Menjadi Agen</h2>
+            <h2 class="font-semibold text-2xl">Pertanyaan Seputar ...</h2>
 
             <div id="faqContainer" class="mt-4">
                 @foreach ($faqs as $faq)
