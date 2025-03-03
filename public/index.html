@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine Tailwind UI Kit - Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <h1 class="text-3xl font-bold text-center text-gray-800">Demo Alpine Tailwind UI Kit</h1>
+
+    <!-- FAQ Live Search -->
+    <div x-data="{ search: '', faqs: [
+            { question: 'Pertanyaan 1', answer: 'Jawaban bla bla bla...' },
+            { question: 'Pertanyaan 2', answer: 'Jawaban bla bla bla...' },
+            { question: 'Pertanyaan 3', answer: 'Jawaban bla bla bla...' }
+        ], filteredFaqs: [] }"
+         x-init="filteredFaqs = faqs"
+         x-effect="filteredFaqs = faqs.filter(faq => faq.question.toLowerCase().includes(search.toLowerCase()))"
+         class="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6 mt-10">
+        
+        <input type="text" x-model="search" class="w-full p-2 border rounded-lg" placeholder="Cari FAQ...">
+        
+        <template x-for="(faq, index) in filteredFaqs" :key="index">
+            <div x-data="{ open: false }" class="border-b py-3">
+                <button @click="open = !open" class="flex justify-between w-full text-left font-semibold text-lg">
+                    <span x-text="faq.question"></span>
+                    <span x-show="!open">▼</span>
+                    <span x-show="open">▲</span>
+                </button>
+                <p x-show="open" x-text="faq.answer" class="mt-2 text-gray-600"></p>
+            </div>
+        </template>
+        
+        <div x-show="filteredFaqs.length === 0" class="text-center text-gray-500">Tidak ada hasil ditemukan...</div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <div x-data="{ open: false }">
+        <button @click="open = true"
+                class="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all">
+            💬
+        </button>
+        
+        <!-- Modal WhatsApp -->
+        <div x-show="open" @click.away="open = false"
+             class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold mb-2">Hubungi Kami</h2>
+                <p class="text-gray-600 text-sm">Klik tombol di bawah untuk chat via WhatsApp.</p>
+                <a href="https://wa.me/6281234567890" target="_blank"
+                   class="block bg-green-500 text-white text-center py-2 rounded-lg font-semibold hover:bg-green-600 mt-4">
+                    Chat via WhatsApp
+                </a>
+                <button @click="open = false" class="mt-3 w-full text-center text-gray-500 text-sm hover:text-gray-700">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
